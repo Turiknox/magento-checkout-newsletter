@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Turiknox_CheckoutNewsletter
+ * @category   Turiknox
+ * @package    Turiknox_CheckoutNewsletter
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<config>
+    <modules>
+        <Turiknox_CheckoutNewsletter>
+            <codePool>local</codePool>
+            <active>true</active>
+            <depends>
+                <Mage_Checkout />
+            </depends>
+        </Turiknox_CheckoutNewsletter>
+    </modules>
+</config>

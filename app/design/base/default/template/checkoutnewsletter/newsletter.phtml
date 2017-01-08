@@ -1,0 +1,18 @@
+<?php
+/*
+ * Turiknox_CheckoutNewsletter
+ * @category   Turiknox
+ * @package    Turiknox_CheckoutNewsletter
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+?>
+<?php if ($this->isEnabled()): ?>
+    <li class="control">
+        <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter'); ?>"
+               value="1" id="is_subscribed" <?php echo $this->isCheckboxCheckedByDefault() ? 'checked="checked"' : '' ?>
+               class="checkbox">
+        <label for="is_subscribed"><?php echo $this->getCheckboxLabelText(); ?></label>
+    </li>
+<?php endif; ?>

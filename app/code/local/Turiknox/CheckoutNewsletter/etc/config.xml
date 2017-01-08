@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Turiknox_CheckoutNewsletter
+ * @category   Turiknox
+ * @package    Turiknox_CheckoutNewsletter
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<config>
+    <modules>
+        <Turiknox_CheckoutNewsletter>
+            <version>1.0.0</version>
+        </Turiknox_CheckoutNewsletter>
+    </modules>
+    <global>
+        <blocks>
+            <turiknox_checkoutnewsletter>
+                <class>Turiknox_CheckoutNewsletter_Block</class>
+            </turiknox_checkoutnewsletter>
+        </blocks>
+        <helpers>
+            <turiknox_checkoutnewsletter>
+                <class>Turiknox_CheckoutNewsletter_Helper</class>
+            </turiknox_checkoutnewsletter>
+        </helpers>
+        <models>
+            <turiknox_checkoutnewsletter>
+                <class>Turiknox_CheckoutNewsletter_Model</class>
+            </turiknox_checkoutnewsletter>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <turiknox_checkoutnewsletter>
+                    <file>turiknox/checkoutnewsletter.xml</file>
+                </turiknox_checkoutnewsletter>
+            </updates>
+        </layout>
+        <events>
+            <sales_quote_save_after>
+                <observers>
+                    <turiknox_checkoutnewsletter>
+                        <type>singleton</type>
+                        <class>turiknox_checkoutnewsletter/observer</class>
+                        <method>subscribeCustomerToNewsletter</method>
+                    </turiknox_checkoutnewsletter>
+                </observers>
+            </sales_quote_save_after>
+        </events>
+    </frontend>
+    <default>
+        <checkout>
+            <newsletter>
+                <text>Sign Up for Newsletter</text>
+            </newsletter>
+        </checkout>
+    </default>
+</config>

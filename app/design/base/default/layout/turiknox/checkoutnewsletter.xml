@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Turiknox_CheckoutNewsletter
+ * @category   Turiknox
+ * @package    Turiknox_CheckoutNewsletter
+ * @copyright  Copyright (c) 2017 Turiknox
+ * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+-->
+<layout>
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.billing">
+            <reference name="form.additional.info">
+                <block type="turiknox_checkoutnewsletter/newsletter" name="turiknox.checkoutnewsletter.newsletter"
+                       template="checkoutnewsletter/newsletter.phtml" />
+            </reference>
+        </reference>
+    </checkout_onepage_index>
+</layout>
