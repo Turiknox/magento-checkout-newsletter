@@ -1,0 +1,10 @@
+{
+  "name": "turkinox/magento-checkout-newsletter",
+  "license": "MIT",
+  "type": "magento-module",
+  "description": "A simple Magento module that will allow you to add a newsletter subscribe checkbox to the default onepage checkout billing step.",
+  "homepage": "https://github.com/Turiknox/magento-checkout-newsletter",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}
