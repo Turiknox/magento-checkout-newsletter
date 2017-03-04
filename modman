@@ -1,4 +1,4 @@
-app/code/local/Turiknox/CheckoutNewsletter app/code/local/Turiknox/CheckoutNewsletter
+app/code/community/Turiknox/CheckoutNewsletter app/code/community/Turiknox/CheckoutNewsletter
 app/design/frontend/base/default/layout/turiknox/checkoutnewsletter.xml app/design/frontend/base/default/layout/turiknox/checkoutnewsletter.xml
 app/design/frontend/base/default/template/checkoutnewsletter app/design/frontend/base/default/template/checkoutnewsletter
 app/etc/modules/Turiknox_CheckoutNewsletter.xml app/etc/modules/Turiknox_CheckoutNewsletter.xml

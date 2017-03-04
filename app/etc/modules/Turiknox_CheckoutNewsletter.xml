@@ -12,7 +12,7 @@
 <config>
     <modules>
         <Turiknox_CheckoutNewsletter>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
             <active>true</active>
             <depends>
                 <Mage_Checkout />
