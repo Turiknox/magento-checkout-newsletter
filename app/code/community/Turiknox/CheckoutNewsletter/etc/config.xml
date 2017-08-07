@@ -6,13 +6,13 @@
  * @package    Turiknox_CheckoutNewsletter
  * @copyright  Copyright (c) 2017 Turiknox
  * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
- * @version    1.0.0
+ * @version    1.0.1
  */
 -->
 <config>
     <modules>
         <Turiknox_CheckoutNewsletter>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Turiknox_CheckoutNewsletter>
     </modules>
     <global>
@@ -41,7 +41,7 @@
             </updates>
         </layout>
         <events>
-            <sales_quote_save_after>
+            <controller_action_predispatch_checkout_onepage_saveBilling>
                 <observers>
                     <turiknox_checkoutnewsletter>
                         <type>singleton</type>
@@ -49,14 +49,14 @@
                         <method>subscribeCustomerToNewsletter</method>
                     </turiknox_checkoutnewsletter>
                 </observers>
-            </sales_quote_save_after>
+            </controller_action_predispatch_checkout_onepage_saveBilling>
         </events>
     </frontend>
     <default>
-        <checkout>
-            <newsletter>
+        <newsletter>
+            <checkout>
                 <text>Sign Up for Newsletter</text>
-            </newsletter>
-        </checkout>
+            </checkout>
+        </newsletter>
     </default>
 </config>

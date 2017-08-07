@@ -6,22 +6,22 @@
  * @package    Turiknox_CheckoutNewsletter
  * @copyright  Copyright (c) 2017 Turiknox
  * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
- * @version    1.0.0
+ * @version    1.0.1
  */
 -->
 <config>
     <sections>
-        <checkout>
+        <newsletter>
             <groups>
-                <newsletter translate="label">
-                    <label>Newsletter</label>
+                <checkout translate="label">
+                    <label>Checkout</label>
                     <sort_order>600</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
                         <enable translate="label">
-                            <label>Enable</label>
+                            <label>Enable Newsletter Signup On Checkout</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>10</sort_order>
@@ -47,8 +47,8 @@
                             <show_in_store>1</show_in_store>
                         </text>
                     </fields>
-                </newsletter>
+                </checkout>
             </groups>
-        </checkout>
+        </newsletter>
     </sections>
 </config>

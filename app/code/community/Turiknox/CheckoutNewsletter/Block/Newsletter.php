@@ -5,7 +5,7 @@
  * @package    Turiknox_CheckoutNewsletter
  * @copyright  Copyright (c) 2017 Turiknox
  * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
- * @version    1.0.0
+ * @version    1.0.1
  */
 class Turiknox_CheckoutNewsletter_Block_Newsletter extends Mage_Core_Block_Template
 {
@@ -16,7 +16,7 @@ class Turiknox_CheckoutNewsletter_Block_Newsletter extends Mage_Core_Block_Templ
      */
     public function isEnabled()
     {
-        return Mage::getStoreConfigFlag('checkout/newsletter/enable');
+        return Mage::getStoreConfigFlag('newsletter/checkout/enable');
     }
 
     /**
@@ -26,7 +26,7 @@ class Turiknox_CheckoutNewsletter_Block_Newsletter extends Mage_Core_Block_Templ
      */
     public function isCheckboxCheckedByDefault()
     {
-        return Mage::getStoreConfigFlag('checkout/newsletter/checked');
+        return Mage::getStoreConfigFlag('newsletter/checkout/checked');
     }
 
     /**
@@ -36,6 +36,6 @@ class Turiknox_CheckoutNewsletter_Block_Newsletter extends Mage_Core_Block_Templ
      */
     public function getCheckboxLabelText()
     {
-        return $this->escapeHtml(Mage::getStoreConfig('checkout/newsletter/text'));
+        return $this->escapeHtml(Mage::getStoreConfig('newsletter/checkout/text'));
     }
 }

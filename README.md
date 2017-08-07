@@ -18,4 +18,4 @@ Copy the contents into your Magento project directory and refresh the cache.
 
 ## Usage
 
-System -> Configuration -> Checkout -> Newsletter
+System -> Configuration -> Customers -> Newsletter

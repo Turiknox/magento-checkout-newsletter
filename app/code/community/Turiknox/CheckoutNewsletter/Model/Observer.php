@@ -5,7 +5,7 @@
  * @package    Turiknox_CheckoutNewsletter
  * @copyright  Copyright (c) 2017 Turiknox
  * @license    https://github.com/turiknox/magento-checkout-newsletter/blob/master/LICENSE.md
- * @version    1.0.0
+ * @version    1.0.1
  */
 class Turiknox_CheckoutNewsletter_Model_Observer
 {
@@ -17,11 +17,18 @@ class Turiknox_CheckoutNewsletter_Model_Observer
      */
     public function subscribeCustomerToNewsletter($observer)
     {
-        $quote = $observer->getEvent()->getQuote();
+        $quote = Mage::getSingleton('checkout/session')->getQuote();
         $customerEmail = $quote->getCustomerEmail();
+        if (!$customerEmail) {
+            $customerEmail = $quote->getBillingAddress()->getEmail();
+        }
 
-        if (Mage::app()->getRequest()->getParam('is_subscribed')) {
-            Mage::getModel('newsletter/subscriber')->subscribe($customerEmail);
+        $subscriberModel = Mage::getModel('newsletter/subscriber');
+        $subscriber = $subscriberModel->loadByEmail($customerEmail);
+        if (!$subscriber->getId()) {
+            if (Mage::app()->getRequest()->getParam('is_subscribed')) {
+                $subscriberModel->subscribe($customerEmail);
+            }
         }
 
         return $this;
