@@ -10,7 +10,7 @@
 ?>
 <?php if ($this->isEnabled()): ?>
     <li class="control">
-        <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter'); ?>"
+        <input type="checkbox" name="is_subscribed" title="<?php echo $this->__($this->getCheckboxLabelText()); ?>"
                value="1" id="is_subscribed" <?php echo $this->isCheckboxCheckedByDefault() ? 'checked="checked"' : '' ?>
                class="checkbox">
         <label for="is_subscribed"><?php echo $this->__($this->getCheckboxLabelText()); ?></label>
