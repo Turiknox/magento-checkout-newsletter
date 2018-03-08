@@ -38,4 +38,23 @@ class Turiknox_CheckoutNewsletter_Block_Newsletter extends Mage_Core_Block_Templ
     {
         return $this->escapeHtml(Mage::getStoreConfig('newsletter/checkout/text'));
     }
+
+     /**
+     * Check if email address already known in checkout and if yes then validate against subscription to show/hide the option
+     *
+     * @return boolean
+     */
+    public function isAlreadySubscribed()
+    {
+    $IsSubscribed = false;
+    $customer = Mage::getSingleton('customer/session')->getCustomer();
+    if ($customer) {
+        $customerEmail = $customer->getEmail();
+        $subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($customerEmail);
+        if ($subscriber) {
+            $IsSubscribed = $subscriber->isSubscribed();
+        }
+    }
+    return $IsSubscribed;
+    }
 }
